@@ -1,5 +1,4 @@
-import com.greenfox.todoapp.*;
-
+import com.greenfox.todoapp.Usage;
 
 public class todo {
   public static void main(String[] args) {

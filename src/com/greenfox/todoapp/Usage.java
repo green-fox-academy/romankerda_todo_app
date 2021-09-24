@@ -11,11 +11,12 @@ public class Usage {
   public Usage() {}
 
   public void printUsage() {
-    System.out.println("Command Line ToDo Application");
+    System.out.println("\nCommand Line ToDo Application");
     System.out.println("=".repeat(29) + "\n");
     System.out.println("Command line arguments:");
     for (int i = 0; i < argumentList.length; i++) {
       System.out.printf("  %s\n", argumentList[i]);
     }
+    System.out.println();
   }
 }
