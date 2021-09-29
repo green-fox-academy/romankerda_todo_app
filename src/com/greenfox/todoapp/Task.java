@@ -11,6 +11,11 @@ public class Task {
     complete = false;
   }
 
+  public Task(String description, boolean complete) {
+    this.complete = complete;
+    this.description = description;
+  }
+
   public String printTask() {
     String status = "";
     if (complete) {
@@ -18,7 +23,7 @@ public class Task {
     } else {
       status = "[ ]";
     }
-    return status + " " + description;
+    return status + " " + description + "\n";
   }
 
   public boolean isComplete() {
@@ -31,6 +36,10 @@ public class Task {
 
   public void setDescription(String description) {
     this.description = description;
+  }
+
+  public String getDescription() {
+    return description;
   }
 
 
