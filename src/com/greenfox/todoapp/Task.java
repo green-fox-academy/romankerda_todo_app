@@ -30,12 +30,8 @@ public class Task {
     return complete;
   }
 
-  public void setComplete(boolean complete) {
-    this.complete = complete;
-  }
-
-  public void setDescription(String description) {
-    this.description = description;
+  public void setComplete() {
+    this.complete = true;
   }
 
   public String getDescription() {

@@ -5,6 +5,7 @@ import com.greenfox.todoapp.Task;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
+import java.sql.Array;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -19,8 +20,7 @@ public class ToDoList {
     toDoList = readToDoList(file);
   }
 
-
-  private List<Task> readToDoList(String file) {
+  public List<Task> readToDoList(String file) {
     List<String> fileLines = new ArrayList<>();
     try {
       fileLines = Files.readAllLines(Paths.get(file));
@@ -34,14 +34,6 @@ public class ToDoList {
       toDoList.add(task);
     }
     return toDoList;
-  }
-
-  public String printToDoListShort() {
-    StringBuilder shortList = new StringBuilder();
-    for (int i = 0; i < toDoList.size(); i++) {
-      shortList.append(i+1 + " - " + toDoList.get(i).getDescription() + "\n");
-    }
-    return shortList.toString();
   }
 
   public String printToDoListLong() {
@@ -77,8 +69,19 @@ public class ToDoList {
     } catch (IOException e) {
       System.out.println("Can't write file");
     }
-
   }
 
+  public void removeTask(int index) {
+    toDoList.remove(index - 1);
+    this.updateFile();
+  }
+
+  public int getSize() {
+    return toDoList.size();
+  }
+
+  public Task getTask(int index) {
+    return toDoList.get(index - 1);
+  }
 }
 
