@@ -60,10 +60,10 @@ public class ToDoList {
 
   public void updateFile() {
     List<String> lines = new ArrayList<>();
-    for (int i = 0; i < toDoList.size(); i++) {
-      String line = toDoList.get(i).getDescription() + ",   " + toDoList.get(i).isComplete();
+    toDoList.forEach(task -> {
+      String line = task.getDescription() + ",   " + task.isComplete();
       lines.add(line);
-    }
+    });
     try {
       Files.write(Paths.get(file), lines);
     } catch (IOException e) {
